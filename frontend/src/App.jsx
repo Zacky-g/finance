@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext.jsx';
 import Login from './pages/Login.jsx';
+import Register from './pages/Register.jsx';
 import Dashboard from './pages/Dashboard.jsx';
 import Transactions from './pages/Transactions.jsx';
 import Budgets from './pages/Budgets.jsx';
@@ -18,6 +19,7 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
       <Route path="/" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
       <Route path="/transactions" element={<ProtectedRoute><Transactions /></ProtectedRoute>} />
       <Route path="/budgets" element={<ProtectedRoute><Budgets /></ProtectedRoute>} />
