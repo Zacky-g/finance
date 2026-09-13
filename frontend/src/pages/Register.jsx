@@ -1,24 +1,32 @@
 import { useState } from 'react';
+import { useAuth } from '../context/AuthContext.jsx';
 import { useNavigate, Link } from 'react-router-dom';
 import { Wallet } from 'lucide-react';
-import axios from '../api/axios'; // sesuaikan dengan file instance axios Anda
 
 export default function Register() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
   const [error, setError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  
+  const { register } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
+
+    if (password !== confirmPassword) {
+      return setError('Konfirmasi password tidak cocok');
+    }
+
     setIsSubmitting(true);
 
     try {
-      await axios.post('/api/auth/register', { name, email, password });
-      // Setelah berhasil daftar, arahkan ke halaman login
+      await register(name, email, password, confirmPassword);
+      // Setelah berhasil register, arahkan ke halaman login
       navigate('/login');
     } catch (err) {
       setError(err.response?.data?.message || 'Registrasi gagal. Coba lagi.');
@@ -78,6 +86,18 @@ export default function Register() {
               placeholder="••••••••"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-slate-700 mb-1">Konfirmasi Password</label>
+            <input
+              type="password"
+              required
+              className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-emerald-500 outline-none"
+              placeholder="••••••••"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
             />
           </div>
 
