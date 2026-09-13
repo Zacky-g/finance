@@ -1,53 +1,46 @@
-# 💰 SaaS Finance Management App
+# SaaS Finance Management App
 
-Aplikasi manajemen keuangan pribadi berbasis Web (Full-Stack) yang dirancang untuk membantu pengguna mengelola transaksi harian, mengontrol anggaran bulanan per kategori, serta memantau kesehatan finansial melalui visualisasi data ringkas.
-
----
-
-## 🚀 Fitur Utama
-
-- **Authentication System**: Login & Register aman menggunakan JSON Web Token (JWT) dan enkripsi password (bcrypt).
-- **Dashboard Analytics**: Visualisasi pemasukan vs pengeluaran, ringkasan saldo, dan riwayat transaksi terbaru menggunakan chart interaktif.
-- **Transaction Management**: Pencatatan transaksi (Income/Expense) lengkap dengan filter kategori, tanggal, dan pagination.
-- **Budget Tracking**: Penetapan batas maksimal anggaran bulanan per kategori dilengkapi *progress bar* dan indikator peringatan (*Over Budget*).
-- **Category Management**: Pengelolaan kategori kustom untuk penyesuaian jenis pengeluaran/pemasukan.
+Aplikasi manajemen keuangan pribadi full-stack berbasis Web untuk mencatat transaksi, mengontrol anggaran bulanan, dan memantau ringkasan saldo melalui visualisasi data.
 
 ---
 
-## 🛠️ Tech Stack
+## Fitur Utama
 
-### Frontend
-- **Framework**: React.js (Vite)
-- **Styling**: Tailwind CSS
-- **Icons**: Lucide React
-- **Data Visualization**: Recharts
-- **HTTP Client**: Axios
-
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: PostgreSQL
-- **ORM / Query Builder**: Prisma / pg
-- **Authentication**: JWT (JSON Web Token) & bcryptjs
+- **Autentikasi**: Login & Register aman dengan JWT.
+- **Dashboard**: Ringkasan saldo, statistik pengeluaran/pemasukan, dan grafik interaktif.
+- **Transaksi**: Pencatatan & filter riwayat transaksi.
+- **Anggaran (Budget)**: Monitoring batas pengeluaran bulanan per kategori.
+- **Kategori**: Kelola kategori pemasukan dan pengeluaran secara kustom.
 
 ---
 
-## 📁 Struktur Proyek
+## Tech Stack
 
-```text
-personal-finance-app/
-├── backend/          # Server Express.js & konfigurasi Database
-│   ├── src/
-│   │   ├── controllers/
-│   │   ├── middlewares/
-│   │   ├── routes/
-│   │   └── config/
-│   └── package.json
-│
-└── frontend/         # Client React.js
-    ├── src/
-    │   ├── components/
-    │   ├── context/
-    │   ├── pages/
-    │   └── services/
-    └── package.json
+- **Frontend**: React.js (Vite), Tailwind CSS, Recharts, Lucide React, Axios
+- **Backend**: Node.js, Express.js, PostgreSQL, JWT, bcryptjs
+
+---
+
+## Cara Menjalankan Proyek
+
+### 1. Backend
+```bash
+cd backend
+npm install
+npm run dev
+```
+
+### 2. Frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+---
+
+## Catatan
+
+Proyek ini dibuat hanya untuk keperluan pembelajaran dan portofolio
+
+---
