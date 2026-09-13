@@ -17,7 +17,7 @@ export default function Register() {
     setIsSubmitting(true);
 
     try {
-      await axios.post('/auth/register', { name, email, password });
+      await axios.post('/api/auth/register', { name, email, password });
       // Setelah berhasil daftar, arahkan ke halaman login
       navigate('/login');
     } catch (err) {

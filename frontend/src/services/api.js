@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../services/api';
 
 const API = axios.create({
   // Gunakan Environment Variable Vercel, jika tidak ada baru fallback ke localhost
