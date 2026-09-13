@@ -75,6 +75,17 @@ export default function Login() {
             {isSubmitting ? 'Memuat...' : 'Masuk'}
           </button>
         </form>
+
+        {/* --- LINK NAVIGASI KE HALAMAN REGISTER --- */}
+        <div className="mt-6 text-center border-t border-slate-100 pt-4">
+          <p className="text-sm text-slate-600">
+            Belum punya akun?{' '}
+            <Link to="/register" className="text-emerald-600 hover:text-emerald-700 font-semibold hover:underline">
+              Daftar di sini
+            </Link>
+          </p>
+        </div>
+
       </div>
     </div>
   );
