@@ -1,4 +1,4 @@
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs'); // atau import bcrypt from 'bcryptjs';
 const pool = require('../config/db'); // Sesuaikan dengan path file database Anda
 
 const register = async (req, res) => {
