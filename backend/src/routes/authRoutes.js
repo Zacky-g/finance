@@ -4,7 +4,9 @@ const { register, login, getProfile } = require('../controllers/authController')
 const { validateRegister, validateLogin } = require('../middleware/validateInput');
 const authenticateToken = require('../middleware/authMiddleware');
 
-// Public Routes
+console.log('Isi validateRegister:', validateRegister);
+console.log('Isi register:', register);
+
 router.post('/register', validateRegister, register);
 router.post('/login', validateLogin, login);
 
